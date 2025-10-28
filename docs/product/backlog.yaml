@@ -1,0 +1,70 @@
+epics:
+  checklist-management:
+    objective: Deliver adaptive, context-aware checklists that reflect each trip's requirements and personal preferences.
+    user_stories:
+      - id: CM-1
+        story: As a traveler, I want the assistant to auto-create a checklist from imported itinerary details so that I can prepare quickly without starting from scratch.
+        acceptance_criteria:
+          - Itinerary metadata (destination, dates, purpose) imported from calendar/email creates a new trip with a generated checklist.
+          - Generated checklist contains packing, preparation, and task sections seeded with relevant items.
+      - id: CM-2
+        story: As a traveler, I want checklist items to adapt to weather, trip type, and traveler profile so that the list reflects my specific needs.
+        acceptance_criteria:
+          - Weather API and profile attributes adjust items (e.g., rain gear for wet forecasts, child-specific items for family trips).
+          - Users can review adjustments with explanations for why items were added or removed.
+      - id: CM-3
+        story: As a traveler, I want to customize checklist items and templates so that I can reuse them for future trips.
+        acceptance_criteria:
+          - Users can add, edit, reorder, and save items or sections into personal templates.
+          - Updated templates are available when generating future trip checklists.
+      - id: CM-4
+        story: As a household coordinator, I want to assign checklist items to collaborators and view completion status so that responsibilities are clear.
+        acceptance_criteria:
+          - Shared trips support inviting collaborators with role-based permissions.
+          - Assigned items display real-time completion status and activity history.
+  reminder-engine:
+    objective: Proactively keep travelers on track with timely, multi-channel notifications tied to checklist progress and trip milestones.
+    user_stories:
+      - id: RE-1
+        story: As a traveler, I want reminders sent through my preferred channels so that I never miss critical tasks.
+        acceptance_criteria:
+          - Users can configure push, email, and SMS preferences per trip.
+          - Reminders respect quiet hours and escalate to alternate channels when prior nudges are ignored.
+      - id: RE-2
+        story: As a traveler, I want reminders tied to due dates and departure timelines so that urgent tasks surface at the right moment.
+        acceptance_criteria:
+          - Checklist items support due dates and urgency levels that determine reminder cadence.
+          - The system accelerates reminder frequency as departure approaches or tasks remain incomplete.
+      - id: RE-3
+        story: As a traveler, I want proactive alerts for overlooked requirements (e.g., visas, vaccinations) so that I can address them before travel.
+        acceptance_criteria:
+          - The engine references external data sources (visa requirements, health advisories) based on itinerary details.
+          - Alerts include lead times aligned to requirement processing windows.
+      - id: RE-4
+        story: As a collaborator, I want acknowledgement workflows so that I know when teammates have seen critical reminders.
+        acceptance_criteria:
+          - Reminders include acknowledgement actions and activity is logged per recipient.
+          - Unacknowledged critical reminders trigger escalation to secondary contacts or channels.
+  insights-dashboard:
+    objective: Provide transparent visibility into trip readiness, risks, and performance trends across individuals and teams.
+    user_stories:
+      - id: ID-1
+        story: As a traveler, I want a dashboard summarizing overall trip readiness so that I can see what still needs attention at a glance.
+        acceptance_criteria:
+          - Dashboard highlights remaining tasks, overdue items, and completion percentage.
+          - Users can drill into sections (packing, documents, logistics) for detail.
+      - id: ID-2
+        story: As a household coordinator, I want visibility into collaborator progress so that I can identify bottlenecks early.
+        acceptance_criteria:
+          - Dashboard surfaces assignee-level progress, outstanding tasks, and last activity timestamps.
+          - Filters allow viewing by person, category, or urgency.
+      - id: ID-3
+        story: As a traveler, I want insights into past trip patterns so that I can optimize future preparation.
+        acceptance_criteria:
+          - Historical data highlights frequently forgotten items and preparation lead times.
+          - Users receive recommendations to adjust templates or reminder schedules based on insights.
+      - id: ID-4
+        story: As an operations manager, I want exportable readiness reports so that stakeholders can share status updates externally.
+        acceptance_criteria:
+          - Reports export to PDF/CSV with configurable date ranges and trip selections.
+          - Exports include summary metrics, completion charts, and outstanding risk flags.
